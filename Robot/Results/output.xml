@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20171126 22:39:48.161" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<suite source="C:\Users\doge\PycharmProjects\Robot\Test\usersignin.robot" id="s1" name="Usersignin">
+<test id="s1-t1" name="User can Open Bodies">
+<kw name="Open Chrome With Options">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20171126 22:39:48.307" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x03EA5DD0&gt;</msg>
+<status status="PASS" endtime="20171126 22:39:48.307" starttime="20171126 22:39:48.307"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>start-maximized</arg>
+</arguments>
+<status status="PASS" endtime="20171126 22:39:48.308" starttime="20171126 22:39:48.307"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>disable-extensions</arg>
+</arguments>
+<status status="PASS" endtime="20171126 22:39:48.308" starttime="20171126 22:39:48.308"></status>
+</kw>
+<kw name="Create Webdriver" library="Selenium2Library">
+<doc>Creates an instance of a WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20171126 22:39:48.308" level="INFO">Creating an instance of the Chrome WebDriver</msg>
+<status status="PASS" endtime="20171126 22:39:51.752" starttime="20171126 22:39:48.308"></status>
+</kw>
+<status status="PASS" endtime="20171126 22:39:51.752" starttime="20171126 22:39:48.307"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${SiteUrl}</arg>
+</arguments>
+<msg timestamp="20171126 22:39:51.753" level="INFO">Opening url 'http://35.166.59.196:8081'</msg>
+<status status="PASS" endtime="20171126 22:40:25.262" starttime="20171126 22:39:51.753"></status>
+</kw>
+<doc>User Can Open Bodies Website</doc>
+<status status="PASS" endtime="20171126 22:40:25.269" critical="yes" starttime="20171126 22:39:48.306"></status>
+</test>
+<test id="s1-t2" name="User can click Sign In Link">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${SignIn}</arg>
+</arguments>
+<msg timestamp="20171126 22:40:25.272" level="INFO">Clicking element '//div[17]/div[1]/div/div[2]/ul/li[2]/strong/a'.</msg>
+<status status="PASS" endtime="20171126 22:40:25.362" starttime="20171126 22:40:25.272"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${x}</arg>
+</arguments>
+<status status="PASS" endtime="20171126 22:40:25.634" starttime="20171126 22:40:25.363"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${SignUpUser}</arg>
+</arguments>
+<status status="PASS" endtime="20171126 22:40:25.673" starttime="20171126 22:40:25.635"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${SignUpPassword}</arg>
+</arguments>
+<status status="PASS" endtime="20171126 22:40:25.720" starttime="20171126 22:40:25.674"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${SignInButton}</arg>
+</arguments>
+<status status="PASS" endtime="20171126 22:40:25.763" starttime="20171126 22:40:25.721"></status>
+</kw>
+<doc>Click Sign In Link</doc>
+<status status="PASS" endtime="20171126 22:40:25.763" critical="yes" starttime="20171126 22:40:25.271"></status>
+</test>
+<test id="s1-t3" name="Specify Email and Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${SignUpUser}</arg>
+<arg>${UserEmail}</arg>
+</arguments>
+<msg timestamp="20171126 22:40:25.766" level="INFO">Typing text 'webambassador@mailinator.com' into text field '//*[@id="loginform-username"]'</msg>
+<status status="PASS" endtime="20171126 22:40:25.943" starttime="20171126 22:40:25.765"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${SignUpPassword}</arg>
+<arg>${UserPassoword}</arg>
+</arguments>
+<msg timestamp="20171126 22:40:25.944" level="INFO">Typing password into text field '//*[@id="loginform-password"]'</msg>
+<status status="PASS" endtime="20171126 22:40:26.056" starttime="20171126 22:40:25.943"></status>
+</kw>
+<status status="PASS" endtime="20171126 22:40:26.057" critical="yes" starttime="20171126 22:40:25.765"></status>
+</test>
+<test id="s1-t4" name="Sign In">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${SignInButton}</arg>
+</arguments>
+<msg timestamp="20171126 22:40:26.058" level="INFO">Clicking element '//*[@id="modal-login-form"]/div[4]/div[1]/input'.</msg>
+<status status="PASS" endtime="20171126 22:40:26.129" starttime="20171126 22:40:26.058"></status>
+</kw>
+<status status="PASS" endtime="20171126 22:40:26.129" critical="yes" starttime="20171126 22:40:26.058"></status>
+</test>
+<test id="s1-t5" name="Verification">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${UserEmail}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20171126 22:40:44.583" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20171126 22:40:44.583" starttime="20171126 22:40:44.086"></status>
+</kw>
+<msg timestamp="20171126 22:40:44.584" level="FAIL">Text 'webambassador@mailinator.com' did not appear in 5 seconds</msg>
+<status status="FAIL" endtime="20171126 22:40:44.584" starttime="20171126 22:40:26.131"></status>
+</kw>
+<status status="FAIL" endtime="20171126 22:40:44.585" critical="yes" starttime="20171126 22:40:26.130">Text 'webambassador@mailinator.com' did not appear in 5 seconds</status>
+</test>
+<doc>User Sign Up</doc>
+<status status="FAIL" endtime="20171126 22:40:44.586" starttime="20171126 22:39:48.165"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="4">Critical Tests</stat>
+<stat fail="1" pass="4">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Usersignin" pass="4">Usersignin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
